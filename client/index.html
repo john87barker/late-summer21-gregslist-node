@@ -8,29 +8,167 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css">
-    <title>gregslist-node</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>gregslist-mvc</title>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+        <nav class="navbar navbar-primary navbar-expand bg-dark text-white">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">gregslist-node</span>
+                <span class="ml-2">Gregslist</span>
             </a>
         </nav>
     </header>
-    <main>
-        <div id="app"></div>
-    </main>
-    <footer class="container-fluid bg-dark text-light">
-        <div class="row text-center">
-            <div class="col">
-                <p><small>Made with 💖 by Codeworks</small></p>
+    <main class="container">
+        <!-- SECTION form for car-->
+        <div class="row">
+            <div class="col mt-5">
+                <!-- car form -->
+                <h1 class="text-center mb-4">- - -Vehicles- - -</h1>
+                <form class="d-flex" onsubmit="app.carsController.createCar()">
+                    <div class="form-group">
+                        <label for="make">Make</label>
+                        <input type="text" name="make" id="make" class="form-control" placeholder="Make..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" name="model" id="model" class="form-control" placeholder="Model..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" name="year" id="year" class="form-control" placeholder="Year..." required
+                            min="1950" max="2021">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
+                            required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgUrl">Image Url</label>
+                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Url...">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="Description..." maxlength="240">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-outline-success">Add</button>
+                    </div>
+                </form>
             </div>
+        </div>
+
+        <!-- template for cars -->
+        <div class="row" id="cars">
+        </div>
+        <!-- END SECTION -->
+
+        <!-- SECTION form for house -->
+        <div class="row">
+            <div class="col mt-5">
+                <!-- house form -->
+                <h1 class="text-center mb-4">- - -Houses- - -</h1>
+                <form class="d-flex" onsubmit="app.housesController.createHouse()">
+                    <div class="form-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <input type="text" name="bedrooms" id="bedrooms" class="form-control" placeholder="Bedrooms..."
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <input type="text" name="bathrooms" id="bathrooms" class="form-control" placeholder="Bathrooms..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year Build</label>
+                        <input type="number" name="year" id="year" class="form-control" placeholder="year..." required
+                            min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
+                            required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="levels">Levels</label>
+                        <input type="number" name="levels" id="levels" class="form-control" placeholder="levels..." required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgUrl">Image Url</label>
+                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Url...">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="Description..." maxlength="240">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-outline-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- template for houses -->
+        <div class="row" id="houses">
+        </div>
+
+        <!-- SECTION form for jobs -->
+        <div class="row">
+            <div class="col mt-5">
+                <!-- jobs form -->
+                <h1 class="text-center mb-4">- - -Jobs- - -</h1>
+                <form class="d-flex" onsubmit="app.jobsController.createJob()">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="jobTitle" class="form-control" placeholder="title..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" name="company" id="company" class="form-control" placeholder="company..."
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rate">rate</label>
+                        <input type="text" name="rate" id="rate" class="form-control"
+                            placeholder="rate..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hours">Expected Hours</label>
+                        <input type="number" name="hours" id="hours" class="form-control" placeholder="hours..."
+                            required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="Description..." maxlength="240">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-outline-success">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- template for jobs -->
+        <div class="row" id="jobs">
+        </div>
+
+
+
+    </main>
+    <footer class="bg-dark text-light">
+        <div class="text-center">
+            <p><small>Made with 😭 by Codeworks</small></p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 
