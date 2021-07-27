@@ -1,5 +1,5 @@
-import { ProxyState } from "../AppState.js"
-import { carsService } from "../Services/CarsService.js"
+import { ProxyState } from '../AppState.js'
+import { carsService } from '../Services/CarsService.js'
 
 function _draw() {
   let template = ''
@@ -22,9 +22,9 @@ export default class CarsController {
   async createCar() {
     try {
       event.preventDefault()
-      console.log('creating car step 1')
-      let form = event.target
-      let rawCar = {
+      // console.log('creating car step 1')
+      const form = event.target
+      const rawCar = {
         make: form.make.value,
         model: form.model.value,
         year: form.year.value,
@@ -41,17 +41,12 @@ export default class CarsController {
   }
 
   deleteCar(carId) {
-    console.log('You are trying to delete a car by the id of', carId)
+    // console.log('You are trying to delete a car by the id of', carId)
     carsService.deleteCar(carId)
   }
 
   bidCar(carId) {
-    console.log('you are bidding on the car with the id of', carId)
+    // console.log('you are bidding on the car with the id of', carId)
     carsService.bidCar(carId)
   }
-
-
-
-
-
 }
