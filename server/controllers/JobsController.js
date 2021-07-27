@@ -43,7 +43,6 @@ export class JobsController extends BaseController {
   async edit(req, res, next) {
     try {
       req.body.id = req.params.id
-      delete req.body.price
       const job = await jobsService.edit(req.body)
       res.send(job)
     } catch (error) {

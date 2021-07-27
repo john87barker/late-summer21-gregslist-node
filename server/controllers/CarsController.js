@@ -67,8 +67,6 @@ export class CarsController extends BaseController {
   async edit(req, res, next) {
     try {
       req.body.id = req.params.id
-      // remove the price from the edit
-      delete req.body.price
       const car = await carsService.edit(req.body)
       res.send(car)
     } catch (error) {

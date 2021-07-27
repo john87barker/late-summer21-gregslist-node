@@ -25,6 +25,7 @@ class JobsService {
     if (!job) {
       throw new BadRequest('invalid id')
     }
+    return job
   }
 
   async destroy(id) {

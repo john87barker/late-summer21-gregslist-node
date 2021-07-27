@@ -25,6 +25,7 @@ class HousesService {
     if (!house) {
       throw new BadRequest('invalid id')
     }
+    return house
   }
 
   async destroy(id) {
