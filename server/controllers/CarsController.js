@@ -9,6 +9,7 @@ export class CarsController extends BaseController {
       .get('/:id', this.getById)
       .post('', this.create)
       .put('/:id', this.edit)
+      .put('/:id/bid', this.bid)
       .delete('/:id', this.destroy)
   }
 
@@ -20,7 +21,7 @@ export class CarsController extends BaseController {
    */
   async getAll(req, res, next) {
     try {
-      const cars = await carsService.getAll()
+      const cars = await carsService.getAll(req.query)
       res.send(cars)
     } catch (error) {
       next(error)
@@ -65,9 +66,20 @@ export class CarsController extends BaseController {
    */
   async edit(req, res, next) {
     try {
-      // { price: 110 }
       req.body.id = req.params.id
+      // remove the price from the edit
+      delete req.body.price
       const car = await carsService.edit(req.body)
+      res.send(car)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async bid(req, res, next) {
+    try {
+      const bid = { price: req.body.price, id: req.params.id }
+      const car = await carsService.bid(bid)
       res.send(car)
     } catch (error) {
       next(error)

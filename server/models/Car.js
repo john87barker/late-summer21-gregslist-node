@@ -8,7 +8,8 @@ const Car = new Schema(
     year: { type: Number, required: true },
     price: { type: Number, required: true, default: 0 },
     description: { type: String, default: 'No Description Provided' },
-    imgUrl: { type: String, default: 'https://placehold.it/200x200' }
+    imgUrl: { type: String, default: 'https://placehold.it/200x200' },
+    pictures: [{ type: String }]
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )

@@ -2,8 +2,8 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class CarsService {
-  async getAll() {
-    const cars = await dbContext.Cars.find({})
+  async getAll(query = {}) {
+    const cars = await dbContext.Cars.find(query)
     return cars
   }
 
@@ -25,6 +25,15 @@ class CarsService {
     if (!car) {
       throw new BadRequest('Invalid Id')
     }
+    return car
+  }
+
+  async bid(body) {
+    let car = await this.getById(body.id)
+    if (car.price > body.price) {
+      throw new BadRequest('Cars can only be bid up')
+    }
+    car = await dbContext.Cars.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
     return car
   }
 
