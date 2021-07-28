@@ -1,5 +1,5 @@
 export default class Job {
-  constructor({ jobTitle, company, hours, rate, description, createdAt, updatedAt, id}) {
+  constructor({ jobTitle, company, hours, rate, description, createdAt, updatedAt, id }) {
     this.jobTitle = jobTitle
     this.description = description
     this.rate = rate
@@ -13,7 +13,7 @@ export default class Job {
 
   get TemplateJob() {
     return `
-<div class="col-md-3 col-sm-2 my-3">
+<div class="col-md-3 col-sm-2 my-3 mx-4">
   <div class="car bg-light shadow rounded-bottom">
     <div class="p-3">
       <div class="text-center">

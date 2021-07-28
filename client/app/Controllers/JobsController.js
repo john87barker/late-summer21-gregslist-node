@@ -1,5 +1,5 @@
-import { ProxyState } from "../AppState.js";
-import { jobsService } from "../Services/JobsService.js"
+import { ProxyState } from '../AppState.js'
+import { jobsService } from '../Services/JobsService.js'
 
 function _draw() {
   let template = ''
@@ -17,14 +17,13 @@ export default class JobsController {
     })
     _draw()
   }
-  
-  
+
   async createJob() {
     try {
       event.preventDefault()
-      let form = event.target
-      
-      let rawJob = {
+      const form = event.target
+
+      const rawJob = {
         jobTitle: form.jobTitle.value,
         company: form.company.value,
         rate: form.rate.value,
@@ -33,15 +32,14 @@ export default class JobsController {
       }
       await jobsService.createJob(rawJob)
       form.reset()
-      
     } catch (error) {
       console.error(error)
       window.alert(error.message)
     }
   }
+
   deleteJob(jobId) {
     console.log('Deleting job number', jobId)
     jobsService.deleteJob(jobId)
   }
-
 }

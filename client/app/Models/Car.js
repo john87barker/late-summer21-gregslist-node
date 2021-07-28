@@ -8,7 +8,7 @@ export default class Car {
     this.model = model
     this.year = year
     this.price = price
-    this.description = description || "no car description"
+    this.description = description || 'no car description'
     this.imgUrl = imgUrl || '//placehold.it/200x200'
   }
   // constructor(data) {
@@ -22,7 +22,7 @@ export default class Car {
 
   get TemplateCar() {
     return `
-    <div class="col-md-3 col-sm-2 my-3 ">
+    <div class="col-md-3 col-sm-2 my-3 mx-4">
       <div class="card bg-light shadow rounded-bottom text-dark">
           <img src="${this.imgUrl}" class="w-100" alt="${this.make} ${this.model} car image">
           <div class="p-3">
@@ -38,5 +38,4 @@ export default class Car {
     </div>
     `
   }
-
 }

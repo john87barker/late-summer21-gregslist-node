@@ -12,51 +12,51 @@
     <title>gregslist-mvc</title>
 </head>
 
-<body>
+<body class="container-flex">
     <header>
-        <nav class="navbar navbar-primary navbar-expand bg-primary text-light">
-            <a class="navbar-brand" href="#">
+        <nav class="navbar navbar-secondary navbar-expand bg-primary text-light">
+            
                 <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
                 <span class="ml-2">Gregslist</span>
-            </a>
+            
         </nav>
     </header>
-    <main class="container-flex">
+    <main >
         <!-- SECTION form for car-->
-        <div class="row bg-secondary justify-content-around">
-            <div class="col mt-5">
+        <div class="row bg-secondary ">
+            <div class="col mt-5 justify-content-around">
                 <!-- car form -->
-                <h1 class="text-center mb-4">- - -Vehicles- - -</h1>
+                <h1 class="text-center m-1 mb-4 ">- - -Vehicles- - -</h1>
                 <form class="d-flex" onsubmit="app.carsController.createCar()">
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="make">Make</label>
                         <input type="text" name="make" id="make" class="form-control" placeholder="Make..." required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="model">Model</label>
                         <input type="text" name="model" id="model" class="form-control" placeholder="Model..." required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="year">Year</label>
                         <input type="number" name="year" id="year" class="form-control" placeholder="Year..." required
                             min="1950" max="2021">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="price">Price</label>
                         <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
                             required min="1">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="imgUrl">Image Url</label>
                         <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Url...">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="description">Description</label>
                         <input type="text" name="description" id="description" class="form-control"
                             placeholder="Description..." maxlength="240">
                     </div>
                     <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-outline-success">Add</button>
+                        <button type="submit" class="btn btn-outline-primary">Add</button>
                     </div>
                 </form>
             </div>
@@ -68,45 +68,45 @@
         <!-- END SECTION -->
 
         <!-- SECTION form for house -->
-        <div class="row bg-success justify-content-around">
+        <div class="row bg-success">
             <div class="col mt-5">
                 <!-- house form -->
                 <h1 class="text-center mb-4">- - -Houses- - -</h1>
-                <form class="d-flex" onsubmit="app.housesController.createHouse()">
-                    <div class="form-group">
+                <form class="d-flex justify-content-around" onsubmit="app.housesController.createHouse()">
+                    <div class="form-group m-1">
                         <label for="bedrooms">Bedrooms</label>
                         <input type="text" name="bedrooms" id="bedrooms" class="form-control" placeholder="Bedrooms..."
                             required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="bathrooms">Bathrooms</label>
                         <input type="text" name="bathrooms" id="bathrooms" class="form-control" placeholder="Bathrooms..." required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="year">Year Build</label>
                         <input type="number" name="year" id="year" class="form-control" placeholder="year..." required
                             min="0">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="price">Price</label>
                         <input type="number" name="price" id="price" class="form-control" placeholder="Price..."
                             required min="1">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="levels">Levels</label>
                         <input type="number" name="levels" id="levels" class="form-control" placeholder="levels..." required min="1">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="imgUrl">Image Url</label>
                         <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="Url...">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="description">Description</label>
                         <input type="text" name="description" id="description" class="form-control"
                             placeholder="Description..." maxlength="240">
                     </div>
                     <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-outline-success">Add</button>
+                        <button type="submit" class="btn btn-outline-primary">Add</button>
                     </div>
                 </form>
             </div>
@@ -117,37 +117,37 @@
         </div>
 
         <!-- SECTION form for jobs -->
-        <div class="row bg-info justify-content-around">
-            <div class="col mt-5">
+        <div class="row bg-info ">
+            <div class="col mt-5 ">
                 <!-- jobs form -->
                 <h1 class="text-center mb-4">- - -Jobs- - -</h1>
-                <form class="d-flex" onsubmit="app.jobsController.createJob()">
-                    <div class="form-group">
+                <form class="d-flex justify-content-around" onsubmit="app.jobsController.createJob()">
+                    <div class="form-group m-1">
                         <label for="title">Title</label>
                         <input type="text" name="title" id="jobTitle" class="form-control" placeholder="title..." required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="company">Company</label>
                         <input type="text" name="company" id="company" class="form-control" placeholder="company..."
                             required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="rate">rate</label>
                         <input type="text" name="rate" id="rate" class="form-control"
                             placeholder="rate..." required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="hours">Expected Hours</label>
                         <input type="number" name="hours" id="hours" class="form-control" placeholder="hours..."
                             required min="1">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group m-1">
                         <label for="description">Description</label>
                         <input type="text" name="description" id="description" class="form-control"
                             placeholder="Description..." maxlength="240">
                     </div>
                     <div class="d-flex align-items-center">
-                        <button type="submit" class="btn btn-outline-success">Add</button>
+                        <button type="submit" class="btn btn-outline-primary">Add</button>
                     </div>
                 </form>
             </div>
