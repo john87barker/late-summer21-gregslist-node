@@ -10696,4 +10696,10 @@ main {
   flex-grow: 1;
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-columns {
+    column-count: 4;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -16,5 +16,10 @@ main {
   flex-grow: 1;
 }
 
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+}
 
 
